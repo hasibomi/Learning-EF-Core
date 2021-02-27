@@ -1,1 +1,1 @@
-This project is to lear Entity Framework Core
+This project is to learn Entity Framework Core
