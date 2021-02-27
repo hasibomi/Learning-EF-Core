@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using EFCore.Data;
 using EFCore.Models;
 
@@ -21,6 +22,16 @@ namespace EFCore
 
                 db.Add(author);
                 db.SaveChanges();
+
+                // Read
+                Console.WriteLine("Querying all Authors:");
+
+                var authors = db.Authors.ToList();
+                
+                foreach (var item in authors)
+                {
+                    Console.WriteLine(item.FirstName);
+                }
             }
         }
     }
