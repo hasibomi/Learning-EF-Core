@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 namespace EFCore.Models
 {
     public class Author
@@ -8,5 +8,7 @@ namespace EFCore.Models
         public string LastName { get; set; }
         public string Username { get; set; }
         public string Email { get; set; }
+
+        public List<Post> Posts { get; set; }
     }
 }
