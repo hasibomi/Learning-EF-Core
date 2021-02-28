@@ -12,34 +12,39 @@ namespace EFCore
             using (var db = new EFCoreContext())
             {
                 // Create
-                Console.WriteLine("Inserting a new Author");
+                // Console.WriteLine("Inserting a new Author");
 
-                var newAuthor = new Author();
-                newAuthor.FirstName = "Tarik";
-                newAuthor.LastName = "Alam";
-                newAuthor.Username = "trk";
-                newAuthor.Email = "trk@example.com";
+                // var newAuthor = new Author();
+                // newAuthor.FirstName = "Tarik";
+                // newAuthor.LastName = "Alam";
+                // newAuthor.Username = "trk";
+                // newAuthor.Email = "trk@example.com";
 
-                db.Add(newAuthor);
-                db.SaveChanges();
+                // db.Add(newAuthor);
+                // db.SaveChanges();
 
                 // Read
-                Console.WriteLine("Querying all Authors:");
+                // Console.WriteLine("Querying all Authors:");
 
-                var authors = db.Authors.ToList();
+                // var authors = db.Authors.ToList();
                 
-                foreach (var item in authors)
-                {
-                    Console.WriteLine(item.FirstName);
-                }
+                // foreach (var item in authors)
+                // {
+                //     Console.WriteLine(item.FirstName);
+                // }
 
                 // Read a single Author
                 var author = db.Authors.OrderBy(a => a.FirstName).First();
                 Console.WriteLine($"{author.FirstName} {author.LastName}");
 
                 // Update
-                Console.WriteLine("Updating the Author");
-                author.LastName = "Alom";
+                // Console.WriteLine("Updating the Author");
+                // author.LastName = "Alom";
+                // db.SaveChanges();
+
+                // Delete the Author
+                Console.WriteLine("Delete the Author");
+                db.Remove(author);
                 db.SaveChanges();
             }
         }
