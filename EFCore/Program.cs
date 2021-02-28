@@ -36,6 +36,11 @@ namespace EFCore
                 // Read a single Author
                 var author = db.Authors.OrderBy(a => a.FirstName).First();
                 Console.WriteLine($"{author.FirstName} {author.LastName}");
+
+                // Update
+                Console.WriteLine("Updating the Author");
+                author.LastName = "Alom";
+                db.SaveChanges();
             }
         }
     }
