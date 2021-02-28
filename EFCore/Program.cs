@@ -14,13 +14,13 @@ namespace EFCore
                 // Create
                 Console.WriteLine("Inserting a new Author");
 
-                var author = new Author();
-                author.FirstName = "Tarik";
-                author.LastName = "Alam";
-                author.Username = "trk";
-                author.Email = "trk@example.com";
+                var newAuthor = new Author();
+                newAuthor.FirstName = "Tarik";
+                newAuthor.LastName = "Alam";
+                newAuthor.Username = "trk";
+                newAuthor.Email = "trk@example.com";
 
-                db.Add(author);
+                db.Add(newAuthor);
                 db.SaveChanges();
 
                 // Read
@@ -32,6 +32,10 @@ namespace EFCore
                 {
                     Console.WriteLine(item.FirstName);
                 }
+
+                // Read a single Author
+                var author = db.Authors.OrderBy(a => a.FirstName).First();
+                Console.WriteLine($"{author.FirstName} {author.LastName}");
             }
         }
     }
